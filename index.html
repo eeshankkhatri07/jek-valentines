@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Bittu 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:wght@600&family=Montserrat:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Particle Background (Subtle) -->
+    <div class="bg-particles" id="hearts-container"></div>
+
+    <!-- Screen 0: Security Gate -->
+    <div class="screen active" id="security-screen">
+        <div class="security-gate">
+            <h2>The Muse Access</h2>
+            <p class="gate-tagline">Enter The Date That Changed Everything</p>
+            <p class="gate-question">On which date did our story begin?</p>
+
+            <input type="text" id="date-input" class="date-input" placeholder="ENTER DATE">
+            <button class="btn" onclick="checkDate()">ENTER ISSUE</button>
+            <p id="error-msg"
+                style="color: var(--primary-color); margin-top: 15px; display: none; font-size: 0.8rem; letter-spacing: 1px;">
+                ACCESS DENIED</p>
+        </div>
+    </div>
+
+    <!-- Screen 1: Landing (Magazine Cover) -->
+    <div class="screen" id="landing-screen">
+        <!-- Magazine Header Bar -->
+        <div class="mag-header-bar">
+            <span class="gold-shimmer">VOL. 1</span>
+            <span class="mag-logo">THE MUSE</span>
+            <span class="gold-shimmer">FEB 2026</span>
+        </div>
+
+        <!-- Subtitle -->
+        <p class="mag-subtitle">THE VALENTINE ISSUE</p>
+
+        <!-- Editorial Cover Layout -->
+        <div class="editorial-cover">
+            <!-- Left Column: Teasers -->
+            <div class="editorial-sidebar editorial-left">
+                <div class="teaser">
+                    <h3>TRENDING</h3>
+                    <p>Why Bittu is the<br>Cutest Human Alive</p>
+                </div>
+                <div class="teaser">
+                    <h3>FLASHBACK</h3>
+                    <p>That first meeting<br>near the service lift</p>
+                </div>
+            </div>
+
+            <!-- Center: Framed Photo (Click to Cycle) -->
+            <div class="editorial-frame">
+                <div class="frame-border">
+                    <img src="images/IMG_1597.jpg" alt="Cover Model" class="editorial-photo" id="cover-carousel-img"
+                        onclick="cycleCoverPhoto()" title="Click to see more">
+                    <div class="carousel-indicator" id="carousel-indicator">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="frame-caption">
+                        <span class="caption-label">COVER STORY</span>
+                        <span class="caption-divider">—</span>
+                        <span class="caption-name">BITTU</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Teasers -->
+            <div class="editorial-sidebar editorial-right">
+                <div class="teaser">
+                    <h3>EXCLUSIVE</h3>
+                    <p>10 Reasons Eeshan<br>Is Obsessed With You</p>
+                </div>
+                <div class="teaser barcode-box">
+                    <svg class="barcode" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"
+                        style="width:80px;height:30px;opacity:0.6;">
+                        <rect x="2" width="1.5" height="35" fill="#333" />
+                        <rect x="5" width="1" height="35" fill="#333" />
+                        <rect x="8" width="2" height="35" fill="#333" />
+                        <rect x="12" width="1" height="35" fill="#333" />
+                        <rect x="15" width="1.5" height="35" fill="#333" />
+                        <rect x="19" width="1" height="35" fill="#333" />
+                        <rect x="22" width="2.5" height="35" fill="#333" />
+                        <rect x="27" width="1" height="35" fill="#333" />
+                        <rect x="30" width="1.5" height="35" fill="#333" />
+                        <rect x="34" width="1" height="35" fill="#333" />
+                        <rect x="37" width="2" height="35" fill="#333" />
+                        <rect x="41" width="1" height="35" fill="#333" />
+                        <rect x="44" width="1.5" height="35" fill="#333" />
+                        <rect x="48" width="2" height="35" fill="#333" />
+                        <rect x="52" width="1" height="35" fill="#333" />
+                        <rect x="55" width="1.5" height="35" fill="#333" />
+                        <rect x="59" width="2.5" height="35" fill="#333" />
+                        <rect x="64" width="1" height="35" fill="#333" />
+                        <rect x="67" width="1.5" height="35" fill="#333" />
+                        <rect x="71" width="1" height="35" fill="#333" />
+                        <rect x="74" width="2" height="35" fill="#333" />
+                        <rect x="78" width="1.5" height="35" fill="#333" />
+                        <rect x="82" width="1" height="35" fill="#333" />
+                        <rect x="85" width="2" height="35" fill="#333" />
+                        <rect x="89" width="1.5" height="35" fill="#333" />
+                        <rect x="93" width="1" height="35" fill="#333" />
+                        <rect x="96" width="2.5" height="35" fill="#333" />
+                        <rect x="101" width="1" height="35" fill="#333" />
+                        <rect x="104" width="1.5" height="35" fill="#333" />
+                        <rect x="108" width="2" height="35" fill="#333" />
+                        <rect x="112" width="1" height="35" fill="#333" />
+                        <rect x="116" width="1.5" height="35" fill="#333" />
+                    </svg>
+                    <span>PRICE: YOUR HEART</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <button class="btn editorial-cta" onclick="nextScreen('gallery-screen')">OPEN ISSUE ✨</button>
+    </div>
+
+    <!-- Screen 2: Photo Gallery -->
+    <div class="screen" id="gallery-screen">
+        <div class="lookbook-header">
+            <h2 class="lookbook-title">The Lookbook</h2>
+            <p class="lookbook-subtitle">MEMORIES & MOMENTS</p>
+        </div>
+        <div class="gallery-container">
+            <!-- Our Memories -->
+            <div class="photo-card" onclick="nextScreen('game-screen')">
+                <img src="images/IMG_5059.JPG" alt="Memory">
+                <div class="photo-caption">Us ❤️</div>
+            </div>
+            <div class="photo-card" onclick="nextScreen('game-screen')">
+                <img src="images/28ff73e3-0b0d-45dc-be3b-60ba6eac87eb.JPG" alt="Memory">
+                <div class="photo-caption">Game Nights</div>
+            </div>
+            <div class="photo-card" onclick="nextScreen('game-screen')">
+                <img src="images/IMG_7929.jpg" alt="Memory">
+                <div class="photo-caption">The Beginning</div>
+            </div>
+            <div class="photo-card" onclick="nextScreen('game-screen')">
+                <img src="images/IMG_6712.JPG" alt="Memory">
+                <div class="photo-caption">Little Moments</div>
+            </div>
+            <div class="photo-card" onclick="nextScreen('game-screen')">
+                <img src="images/b0d37315-31f7-4833-a181-e469dbc35415.JPG" alt="Memory">
+                <div class="photo-caption">Adventures</div>
+            </div>
+            <div class="photo-card" onclick="nextScreen('game-screen')">
+                <img src="images/9e42f644-dc6b-4e1b-a9c8-d6023d094bae.JPG" alt="Memory">
+                <div class="photo-caption">Crazy Times</div>
+            </div>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; letter-spacing: 2px;">SELECT A MOMENT TO START THE INTERVIEW</p>
+    </div>
+
+    <!-- Screen 3: Treasure Hunt Game (The Interview) -->
+    <div class="screen" id="game-screen">
+        <div class="game-container">
+            <div class="game-layout">
+                <!-- Left Side: Editorial Shot -->
+                <div class="game-image-panel">
+                    <img src="images/IMG_1597.jpg" alt="Model">
+                </div>
+
+                <!-- Right Side: Quiz -->
+                <div class="game-content-panel">
+                    <div class="timer-bar">
+                        <div class="timer-fill" id="timer-fill"></div>
+                    </div>
+
+                    <div class="question-box">
+                        <p id="question-number"
+                            style="font-size: 0.8rem; letter-spacing: 2px; color: var(--text-light); margin-bottom: 10px;">
+                            QUESTION 1/5</p>
+                        <p id="question-text" class="question">Loading...</p>
+                    </div>
+
+                    <div class="options-grid" id="options-container">
+                        <!-- Options injected by JS -->
+                    </div>
+
+                    <div id="hint-card" class="hint-card">
+                        <p id="reward-text"
+                            style="color: var(--primary-color); font-weight: 700; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 10px;">
+                        </p>
+                        <h3>🎉 VIP ACCESS GRANTED:</h3>
+                        <p id="hint-text" class="hint-text">...</p>
+                        <button class="btn" style="margin-top: 20px; width: 100%; border-color: var(--primary-color);"
+                            onclick="nextQuestion()">NEXT QUESTION ➜</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 4: Final Reveal -->
+    <div class="screen" id="final-screen">
+        <div class="cover-image-container" style="opacity: 0.2">
+            <img src="images/12c3b2c9-9878-4e6e-9f9e-83b9eb88268e.JPG" class="cover-img">
+        </div>
+        <div style="z-index: 5; position: relative;">
+            <h2 style="font-size: 4rem;">The Muse</h2>
+            <div class="final-msg" id="final-msg" style="font-size: 1.5rem; margin: 30px 0;">
+                "You were always the answer.<br>
+                Will you be my Valentine? 🌹"
+            </div>
+            <p id="rejection-msg" class="rejection-msg" style="display: none;"></p>
+            <div id="valentine-buttons" class="valentine-buttons">
+                <button class="btn btn-yes" id="btn-yes" onclick="sayYes()">YES 💖</button>
+                <button class="btn btn-no" id="btn-no" onclick="sayNo()">No 😶</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

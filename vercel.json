@@ -1,0 +1,13 @@
+{
+  "name": "the-muse-valentine",
+  "version": 2,
+  "cleanUrls": true,
+  "framework": null,
+  "public": false,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ]
+}
